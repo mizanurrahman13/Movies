@@ -28,14 +28,15 @@ public static class ContractMapping
         };
     }
 
-    public static MovieResponse MapToResponse(this Movie response)
+    public static MovieResponse MapToResponse(this Movie movie)
     {
         return new MovieResponse
         {
             Id = Guid.NewGuid(),
-            Title = response.Title,
-            YearOfRelease = response.YearOfRelease,
-            Genres = response.Genres.ToList(),
+            Title = movie.Title,
+            Slug = movie.Slug,
+            YearOfRelease = movie.YearOfRelease,
+            Genres = movie.Genres.ToList(),
         };
     }
 
