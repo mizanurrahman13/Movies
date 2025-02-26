@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
-using MOVIES.Api;
+using MOVIES.Api.Auth;
 using MOVIES.Api.Mapping;
 using MOVIES.Application;
 using MOVIES.Application.Database;

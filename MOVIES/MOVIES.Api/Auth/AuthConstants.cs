@@ -1,4 +1,4 @@
-﻿namespace MOVIES.Api;
+﻿namespace MOVIES.Api.Auth;
 
 public class AuthConstants
 {
