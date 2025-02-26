@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOVIES.Application", "MOVIE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOVIES.Contracts", "MOVIES.Contracts\MOVIES.Contracts.csproj", "{1DEAA326-8ECD-4A26-8887-65DE563CC97B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOVIES.Identity.Api", "Helpers\MOVIES.Identity.Api\MOVIES.Identity.Api.csproj", "{0D928158-68FD-4EAA-960C-53F9CD7671F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +31,18 @@ Global
 		{1DEAA326-8ECD-4A26-8887-65DE563CC97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DEAA326-8ECD-4A26-8887-65DE563CC97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DEAA326-8ECD-4A26-8887-65DE563CC97B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D928158-68FD-4EAA-960C-53F9CD7671F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D928158-68FD-4EAA-960C-53F9CD7671F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D928158-68FD-4EAA-960C-53F9CD7671F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D928158-68FD-4EAA-960C-53F9CD7671F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D928158-68FD-4EAA-960C-53F9CD7671F3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E46C974-60F2-4365-90BF-E67EFEF9912D}
 	EndGlobalSection
 EndGlobal
