@@ -9,6 +9,7 @@ using MOVIES.Api.Swagger;
 using MOVIES.Application;
 using MOVIES.Application.Database;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -52,7 +53,16 @@ builder.Services.AddApiVersioning(x =>
     x.ApiVersionReader = new MediaTypeApiVersionReader("api-version");
 }).AddMvc().AddApiExplorer();
 
-builder.Services.AddResponseCaching();
+//builder.Services.AddResponseCaching();
+builder.Services.AddOutputCache(x =>
+{
+    x.AddBasePolicy(c => c.Cache());
+    x.AddPolicy("MovieCache", c =>
+        c.Cache()
+        .Expire(TimeSpan.FromMinutes(1))
+        .SetVaryByQuery(new[] { "title", "year", "sortBy", "page", "pageSize" })
+        .Tag("Movies"));
+});
 
 builder.Services.AddControllers();
 
@@ -96,7 +106,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 //app.UseCors();
-app.UseResponseCaching();
+//app.UseResponseCaching();
+app.UseOutputCache();
 
 app.UseMiddleware<ValidationMappingMiddleware>();
 app.MapControllers();
